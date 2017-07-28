@@ -1,0 +1,14 @@
+version: '2'
+services:
+  api:
+    build: ./api
+    ports:
+      - "127.0.0.1:7000:7000"
+    volumes:
+      - ./api:/src
+  postgres:
+    build: ./postgres
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password
